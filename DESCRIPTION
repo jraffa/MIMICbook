@@ -1,0 +1,15 @@
+Package: MIMICbook
+Type: Package
+Title: R functions for the Secondary Analysis of Electronic Health Records Book/
+    Course
+Version: 0.1.0
+Author: Jesse D. Raffa
+Maintainer: Jesse Raffa <jraffa@mit.edu>
+Description: Functions that are used in Chapter 5 of Section 2 of our
+    forthcoming book on Secondary Analysis of Electronic Health Records Book/Course.
+    I am hoping to incorporate additional functions for the course.
+License: MIT
+LazyData: TRUE
+Imports:
+    knitr,xtable
+RoxygenNote: 5.0.1
