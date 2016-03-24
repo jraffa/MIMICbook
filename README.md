@@ -1,4 +1,4 @@
-# MIMICbook
+# MIMICbook an R package
 
 This packages accompanies some of the chapters used in an upcoming book on MIMIC.  It will also be used in a forthcoming course.
 
