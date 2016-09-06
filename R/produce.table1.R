@@ -7,7 +7,8 @@
 #' @author Jesse D. Raffa
 #' @details
 #' This function computes mean and standard deviations for numeric columns and number of individuals with a characteristic along with percentage for factor columns contained in a data.frame.  Outputs a matrix of characters which can then be passed to some other functions for display in a research report.
-#' @seealso \code{\link[knitr]{kable}} \code{\link[xtable]{xtable}}
+#' See the \code{\link[tableone]{tableone}} package for a more comprehensive function that has many other bells and whistles.
+#' @seealso \code{\link[knitr]{kable}} \code{\link[xtable]{xtable}} \code{\link[tableone]{tableone}} 
 #' @export
 #' @importFrom knitr kable
 #' @importFrom xtable xtable
