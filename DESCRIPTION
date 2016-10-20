@@ -5,9 +5,9 @@ Title: R functions for the Secondary Analysis of Electronic Health Records Book/
 Version: 0.1.0
 Author: Jesse D. Raffa
 Maintainer: Jesse Raffa <jraffa@mit.edu>
-Description: Functions that are used in Chapter 5 of Section 2 of our
+Description: Functions that are used in Chapter 16 of Section 2 of our
     forthcoming book on Secondary Analysis of Electronic Health Records Book/Course.
-    I am hoping to incorporate additional functions for the course.
+    I am hoping to incorporate additional functions for the course, HST.953.
 License: MIT
 LazyData: TRUE
 Imports:
