@@ -19,7 +19,6 @@ Take a data.frame and convert any columns consisting of only 0's and 1's (binary
 }
 \details{
 This function convert any columns consisting of only 0's and 1's (binary) values, to a factor variable, to ease calculation and interpreations of subsequent analysis.
-#' @seealso \code{\link[knitr]{kable}} \code{\link[xtable]{xtable}} \code{\link[tableone]{CreateTableOne}}
 }
 \examples{
 
@@ -34,5 +33,8 @@ summary(out)
 }
 \author{
 Jesse D. Raffa
+}
+\seealso{
+\code{\link[knitr]{kable}} \code{\link[xtable]{xtable}} \code{\link[tableone]{CreateTableOne}}
 }
 

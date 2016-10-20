@@ -11,5 +11,5 @@ Description: Functions that are used in Chapter 5 of Section 2 of our
 License: MIT
 LazyData: TRUE
 Imports:
-    knitr,xtable
+    knitr,xtable, ggplot2, dplyr
 RoxygenNote: 5.0.1

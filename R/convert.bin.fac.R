@@ -7,7 +7,7 @@
 #' @author Jesse D. Raffa
 #' @details
 #' This function convert any columns consisting of only 0's and 1's (binary) values, to a factor variable, to ease calculation and interpreations of subsequent analysis.
-#' #' @seealso \code{\link[knitr]{kable}} \code{\link[xtable]{xtable}} \code{\link[tableone]{CreateTableOne}}
+#' @seealso \code{\link[knitr]{kable}} \code{\link[xtable]{xtable}} \code{\link[tableone]{CreateTableOne}}
 #' @export
 #' @importFrom knitr kable
 #' @importFrom xtable xtable
