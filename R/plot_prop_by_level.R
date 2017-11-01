@@ -38,3 +38,23 @@ plot_prop_by_level <- function(dat,factor.var1,prop.var,alpha=0.05,factor.var2=N
     return(ggplot2::ggplot(toplot,aes_string(x=factor.var1,"prop",col=factor.var2,group=factor.var2)) + ggplot2::geom_point(position=position_dodge(width=0.5)) + ggplot2::geom_errorbar(aes(ymax=UL,ymin=LL),width=0.1,alpha=0.6,position=position_dodge(width=0.5)) + ylab(ylab))
   }
 }
+
+
+
+plot_odds_by_level <- function(dat,factor.var1,prop.var,alpha=0.05,factor.var2=NULL,ylab="Odds") {
+
+  if(is.null(factor.var2)) {
+    toplot <- dat %>% group_by_(factor.var1) %>%
+      mutate_(prop.var2=paste0("as.numeric(as.character(", prop.var, "))"))%>%
+      summarise(n=n(),prop=mean(prop.var2,na.rm=T),odds=prop/(1-prop),LL= prop - qnorm(1-alpha/2)*sqrt(prop/(1-prop)^3/n),UL= prop + qnorm(1-alpha/2)*sqrt(prop/(1-prop)^3/n))
+    #print(toplot)
+    return(ggplot2::ggplot(toplot,ggplot2::aes_string(x=factor.var1,"prop")) + ggplot2::geom_point() + ggplot2::geom_errorbar(aes(ymax=UL,ymin=LL),width=0.1) + ylab(ylab))
+  } else {
+
+    toplot <- dat %>% group_by_(factor.var1,factor.var2) %>%
+      mutate_(prop.var2=paste0("as.numeric(as.character(", prop.var, "))"))%>%
+      summarise(n=n(),prop=mean(prop.var2,na.rm=T),LL= prop - qnorm(1-alpha/2)*sqrt(prop*(1-prop)/n),UL= prop + qnorm(1-alpha/2)*sqrt(prop*(1-prop)/n))
+    #print(toplot)
+    return(ggplot2::ggplot(toplot,aes_string(x=factor.var1,"prop",col=factor.var2,group=factor.var2)) + ggplot2::geom_point(position=position_dodge(width=0.5)) + ggplot2::geom_errorbar(aes(ymax=UL,ymin=LL),width=0.1,alpha=0.6,position=position_dodge(width=0.5)) + ylab(ylab))
+  }
+}
