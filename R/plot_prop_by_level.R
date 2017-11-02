@@ -39,7 +39,27 @@ plot_prop_by_level <- function(dat,factor.var1,prop.var,alpha=0.05,factor.var2=N
   }
 }
 
-
+#' Statified Odds Plot with Confidence Intervals
+#'
+#' @param dat a data frame of patient characteristics from a study.
+#' @param factor.var1 string indicating the first factor variable to stratify by (what will be on the x-axis)
+#' @param prop.var string indicating the outcome variable to calculate the odds of.  Must be binary or logical
+#' @param factor.var2 string indicating the second factor variable to stratify by (what will be designated by color), default is NULL which ignores this argument.
+#' @param alpha the confidence level to use for the confidence interval construction.  by default it uses 0.05 => 95\% confidence intervals.
+#' @return a ggplot of the odds of the outcome stratified by factor.var1 and (optionally) factor.var2
+#' @author Jesse D. Raffa
+#' @details This function 
+#' @seealso \code{\link[ggplot2]{ggplot}}
+#' @export
+#' @import dplyr
+#' @import ggplot2
+#' @examples
+#'
+#' set.seed(1)
+#' require(ggplot2); require(dplyr)
+#' N <- 100;
+#' dataf <- data.frame(outcome=sample(c(0,1),N,replace=TRUE),age=c(runif(N-1,0,100),NA),sex=as.factor(sample(c(0,1,NA),N,replace=TRUE)),cholesterol=rnorm(N,100,30),rx=as.factor(sample(c(0,1),N,replace=TRUE)))
+#' plot_odds_by_level(dataf,"rx","outcome",factor.var2="sex")
 
 plot_odds_by_level <- function(dat,factor.var1,prop.var,alpha=0.05,factor.var2=NULL,ylab="Odds") {
 
