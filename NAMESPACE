@@ -3,6 +3,7 @@
 export(convert.bin.fac)
 export(plot_OR_by_level)
 export(plot_prop_by_level)
+export(plot_odds_by_level)
 export(produce.table1)
 import(dplyr)
 import(ggplot2)
